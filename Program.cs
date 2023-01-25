@@ -20,13 +20,15 @@ public class Program
     /// </summary>
     public static void ValidateIpUsingSystemNet()
     {
+        //get ip string from user input
         var ip = ValidateHeader();
+        //try to parse the ip input string
         IPAddress.TryParse(ip, out var result);
 
         //Output as statements. Uncomment the line below.
         //Console.WriteLine(result is null ? "Ip is invalid." : "Your ip is valid and it's {0}", result);
 
-        //Output a boolean
+        //Output a boolean which indicate if it's valid when result isn't null
         Console.WriteLine(result is null);
     }
 
@@ -35,13 +37,15 @@ public class Program
     /// </summary>
     public static void ValidateIpUsingRegularExpression()
     {
+        //get ip string from user input
         var ip = ValidateHeader();
+        //define regular expression for matching ip pattern
         var regex = new Regex(@"^([0-9]|[1-9][0-9]|[1-2][0-5][0-5])\.([0-9]|[1-9][0-9]|[1-2][0-5][0-5])\.([0-9]|[1-9][0-9]|[1-2][0-5][0-5])\.([0-9]|[1-9][0-9]|[1-2][0-5][0-5])$");
 
         //Output as statements. Uncomment the line below.
         // Console.WriteLine(regex.IsMatch(ip) ? "Your IP is valid." : "Your IP is invalid");
 
-        //Output a bolean
+        //Output a bolean which indicate the ip is valid when regex matched.
         Console.WriteLine(regex.IsMatch(ip));
     }
 
@@ -50,34 +54,47 @@ public class Program
     /// </summary>
     public static void ValidateIP1()
     {
+        //get ip string from user input
         var ip = ValidateHeader();
+        //split the ip string into array
         var ipParts = ip.Split(".");
-
+        //define the variable which indicate the ip is valid and use later in the flow control below
         var valid = false;
+
         foreach (var part in ipParts)
         {
+            //check  the array item if it's null or empty. If it is null or empty, the ip string is invalid
             if (string.IsNullOrEmpty(part.Trim()))
             {
+                //ip string is invalid here so we assign the valid variable to false
                 valid = false;
+                //after assiged the valid variable we break the loop because there's no point to loop the next array item because the ip string is invalid
                 break;
             }
+            //when array item is not null or empty
             else
             {
+                //check the text length of the array item 
                 switch (part.Length)
                 {
+                    //if the length is 1 the valid value of the ip is between 0-9
                     case 1:
                         valid = int.TryParse(part, out int n1) && n1 >= 0;
                         break;
+                    //if the length is 2 the valid value of the ip is between 0-99 and it cannot start with 0.
                     case 2:
                         valid = part[0] != '0' && int.TryParse(part, out int n2) && n2 >= 0;
                         break;
+                    //if the length is 3 the valid value of the ip is between 0-255 and it cannot start with 0 either.
                     case 3:
                         valid = part[0] != '0' && int.TryParse(part, out int n3) && n3 >= 0 && n3 <= 255;
                         break;
+                    //other lenght is considered the ip string invalid
                     default:
                         valid = false;
                         break;
                 }
+                //if during swith there is the possibility which the valid is false whcih indicates that the ip string is invalid, we break the loop.
                 if (!valid)
                     break;
             }
@@ -95,9 +112,13 @@ public class Program
     /// </summary>
     public static void ValidateIP2()
     {
+        //get ip string from user input
         var ip = ValidateHeader();
+        //split ip string into array
         var ipParts = ip.Split('.');
+        //define the ip string validated by using array filter method
         var valid = ipParts.Length == 4 && ipParts.All(p => p.Length <= 3 && p.Length > 0 && (int.TryParse(p, out int n) && n >= 0 && n <= 255));
+        //if one of the array item has the text length > 1 and the first character of the array item text is '0' which indicate that the ip string is invalid.
         if (ipParts.Any(p => p.Length > 1 && p[0] == '0'))
         {
             valid = false;
@@ -117,6 +138,7 @@ public class Program
     public static string ValidateHeader()
     {
         Console.Write("Input IP:");
+        //get ip string from user input
         var ip = Console.ReadLine() ?? "";
 
         //if we want to remove any spaces if user accidentally typed in. Uncomment the line below.
@@ -127,7 +149,7 @@ public class Program
     #endregion
 
     //First interview test
-    public static void ExcericeOne()
+    public static void TestInFirstInterview()
     {
         /*
             You are given a string of numbers between 0-9. 
