@@ -1,0 +1,15 @@
+/Users/sokheangkhun/Desktop/techbodia/bin/Debug/net7.0/techbodia
+/Users/sokheangkhun/Desktop/techbodia/bin/Debug/net7.0/techbodia.deps.json
+/Users/sokheangkhun/Desktop/techbodia/bin/Debug/net7.0/techbodia.runtimeconfig.json
+/Users/sokheangkhun/Desktop/techbodia/bin/Debug/net7.0/techbodia.dll
+/Users/sokheangkhun/Desktop/techbodia/bin/Debug/net7.0/techbodia.pdb
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.csproj.AssemblyReference.cache
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.AssemblyInfoInputs.cache
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.AssemblyInfo.cs
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.csproj.CoreCompileInputs.cache
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.dll
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/refint/techbodia.dll
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.pdb
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/techbodia.genruntimeconfig.cache
+/Users/sokheangkhun/Desktop/techbodia/obj/Debug/net7.0/ref/techbodia.dll
